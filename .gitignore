@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# Temporary/runtime files
+*.log
+*.tmp
+
+# Packet captures
+*.pcap
+*.pcapng
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
