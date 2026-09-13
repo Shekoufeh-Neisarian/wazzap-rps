@@ -41,7 +41,8 @@ The project implements a custom application-layer protocol for Rock Paper Scisso
     ├── screenshots/
     │   ├── rps-local-validation.png
     │   ├── rps-pinggy-session.png
-    │   ├── rps-multiplayer.png
+    │   ├── rps-multiplayer-server.png
+    │   ├── rps-multiplayer-client.png
     │   ├── rps-wireshark-dissector.png
     │   ├── tic-tac-toe-win.png
     │   └── tic-tac-toe-pinggy.png
@@ -346,9 +347,15 @@ The RPS server was successfully accessed through a public Pinggy TCP tunnel. The
 
 ### RPS Multiplayer Matchmaking
 
-Two independent Ncat clients were matched through the multiplayer server. The Bash processes exchange player and move information using shared files under `/tmp`.
+Two independent Ncat clients were matched through the multiplayer server. Because each Ncat connection runs in a separate Bash process, shared files under `/tmp` are used for inter-process communication and move synchronization.
 
-![RPS Multiplayer](screenshots/rps-multiplayer.png)
+**Server-side matchmaking and IPC**
+
+![RPS Multiplayer Server](screenshots/rps-multiplayer-server.png)
+
+**Client-side gameplay and verdicts**
+
+![RPS Multiplayer Client](screenshots/rps-multiplayer-client.png)
 
 ### Custom Wireshark RPS Dissector
 
